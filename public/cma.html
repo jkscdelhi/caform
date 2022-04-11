@@ -155,15 +155,22 @@
                 </div>
                 </div>
                 <div class="right-hero flex-class">
-                    <div class="form">
+                    <form onsubmit="validateForm()" class="form" action="/submit" method="POST">
+                
                         
                         <p class="tag ">Name</p>
-                        <input id="contact-full-name" class="" type="text" placeholder="Full Name">
+                        <input required name="name" id="contact-full-name" class="" type="text" placeholder="Full Name">
                        
 
                        
                         <p class="tag">Which location you prefer?</p>
-                        <div class="input-accordian-wrapper  loco-drop-down">
+                        <select required class="custom-select" style="width: 100%;padding: 10px 0;background-color:#f8f8f8;border:none" name="location" id="cars">
+                            <option value="Laxmi Nagar">Laxmi Nagar</option>
+                            <option value="Pitampura">Pitampura</option>
+                            <option value="Faridabad">Faridabad</option>
+                            <option value="Kaushambi">Kaushambi</option>
+                          </select>
+                        <!-- <div class="input-accordian-wrapper  loco-drop-down">
                             <p class="default loco-d">Click to choose</p>
                             <ul class="drop-down loco-drop-list">
                                 <li>Laxmi Nagar</li>
@@ -171,13 +178,14 @@
                                 <li>Faridabad</li>
                                 <li>Kaushambi</li>
                             </ul>
-                        </div>
+                        </div> -->
                         <p class="tag">Contact No</p>
-                        <input id="contact-no" class="" type="text" placeholder="Contact Number">
+                        <input required name="phone" id="contact-no" type="number" minlength="10" maxlength="10" placeholder="Contact Number">
                         <p class="tag">Email</p>
-                        <input id="email" class="" type="email" placeholder="Email"><br>
-                        <button id="submit-btn-ca" class="submit-btn">Submit</button>
-                    </div>
+                        <input required name="email" id="email" class="" type="email" placeholder="Email"><br>
+                        <input  type="submit" value="Submit"></button>
+                  
+                </form>
                 </div>
             </div>
             </div>
@@ -937,126 +945,17 @@
     </script>
 
     <script src="./nav.js"></script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
- https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
-<script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-   apiKey: "AIzaSyB79UXI0sRNudkHh48fMVJaiCFZuTaPduA",
-   authDomain: "jk-shah.firebaseapp.com",
-   projectId: "jk-shah",
-   storageBucket: "jk-shah.appspot.com",
-   messagingSenderId: "185531625012",
-   appId: "1:185531625012:web:7eb851942f5cd14bf96461",
-   measurementId: "G-J0MQBTFWDC"
- };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    const db = firebase.firestore();
-</script>
-
-
-<script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
-  const namecontact = document.querySelector('#contact-full-name');
-  const number = document.querySelector("#contact-no");
-  const email = document.querySelector('#email');
-
-   const locbtn = document.querySelector('.loco-drop-down');
-   const locod = document.querySelector('.loco-d');
-   const locolist = document.querySelector('.loco-drop-list');
-
-
-   const newsbtn = document.querySelector('#news-letter-submit-btn');
-   const newsemail  = document.querySelector('#news-letter-email');
-   const newsname  = document.querySelector('#news-letter-full-name');
-
-   newsbtn.addEventListener('click',()=>{
-       newsbtn.innerText = "Loading..."
-       db.collection("news-letter").add({
-       name: newsname.value,
-       email: newsemail.value,
-       from:"cma",
-       created:new Date()
-       })
-       .then((docRef) => {
-       // console.log("Document written with ID: ", docRef.id);
-       newsbtn.innerText = "Thank You"
-       newsemail.value = ""
-       newsname.value = ""
-
-       })
-       .catch((error) => {
-       // console.error("Error adding document: ", error);
-       });
-           })
-
-   locolist.addEventListener('click',(e)=>{
-       locod.innerText = e.target.innerText
-   })
-   locbtn.addEventListener('click',()=>{
-       if(locolist.style.display == "block")
-       {locolist.style.display = "none";}else{
-           locolist.style.display = "block"
-       }
-   })
-
- 
-
-   const submitBtn = document.querySelector('.submit-btn');
-   const message = document.querySelector('.message');
-
-   submitBtn.addEventListener('click',()=>{
-       if( namecontact.value == "" || number.value == "" || email.value == "" || locod.innerText == "Click to choose"){
-           if(namecontact.value == ""){
-               window.alert("Please Enter Your Name")
-           }else if(number.value == ""){
-               window.alert("Please Enter Your Contact Number")
-           }else if(email.value == ""){
-               window.alert("Please Enter Your Email")
-           }else if(locod.innerText == "Click to choose"){
-               window.alert("Please Select a location")
+    <script>
+        function validateForm() {
+           const phone = document.querySelector('#contact-no');
+           console.log(phone.value.length)
+           if (phone.value.length != 10) {
+             alert("Contact Number must be filled out");
+             return false;
            }
-   }else{
-
-
-               submitBtn.innerText = "Loading..."
-       db.collection("cma-form").add({
-name: namecontact.value,
-mobile: number.value,
-email: email.value,
-location: locod.innerText,
-created:new Date()
-})
-.then((docRef) => {
-// console.log("Document written with ID: ", docRef.id);
-
-namecontact.value = ""
-number.value = ""
-email.value = ""
-location.href = './thankyou.html';
-})
-.catch((error) => {
-// console.error("Error adding document: ", error);
-});
-
-   }
-
-
-
-
-
-
-
-   })
-</script>
+         }
+       
+       </script>
  
 
 </body>

@@ -49,4 +49,20 @@ app.get("/",(req,res)=>{
     return res.redirect('index.html');
 }).listen(process.env.PORT || 3000);
 
+app.get("/cs",(req,res)=>{
+    res.set({
+        "Allow-access-Allow-Origin": '*'
+    })
+
+    return res.redirect('cs.html');
+}).listen(process.env.PORT || 3000);
+
+app.get("/ccs",(req,res)=>{
+    res.set({
+        "Allow-access-Allow-Origin": '*'
+    })
+
+    return res.redirect('cma.html');
+}).listen(process.env.PORT || 3000);
+
 console.log("l");
