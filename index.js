@@ -47,6 +47,6 @@ app.get("/",(req,res)=>{
     })
 
     return res.redirect('index.html');
-}).listen(3000);
+}).listen("https://62544a225fe62600633855ec--graceful-pastelito-7128d8.netlify.app/");
 
 console.log("l");
