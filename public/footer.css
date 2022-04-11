@@ -1,0 +1,195 @@
+
+.footer {
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .footer .hills {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    z-index: 0;
+  }
+  
+  .footer .top {
+    padding-top: 100px;
+    background-color: #f8f8f8;
+  }
+  
+  
+  
+  
+  .footer .top .cards {
+    width: 100%;
+    margin-top: 10px;
+    padding: 40px 0;
+    background-image: url(./circle2.png);
+    background-color: var(--bright-blue);
+    background-size: 15px 15px;
+  }
+  
+  .footer .top .card {
+    height: 160px;
+    width: 160px;
+    border-radius: 100%;
+    background-color: var(--dark-blue);
+    flex-direction: column;
+    margin: 20px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .footer .top .card .card-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .footer .top .card .card-text {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .footer .top .card:hover {
+    background-color: var(--yellow);
+  }
+  
+  .footer-bottom {
+    background-color: var(--dark-blue);
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .col-wrapper {
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  
+  .col-1 {
+    margin: 100px 20px 50px 20px;
+    color: #fff;
+  }
+  
+  .footer .bottom .col-wrapper .col-1 li {
+    margin: 20px 0;
+  }
+  
+  .footer .bottom .col-wrapper .col-1 li:hover {
+    text-decoration: underline;
+    color: var(--yellow);
+  }
+  
+  .footer .bottom .news-letter .button-1 {
+    padding: 10px 0;
+  }
+  
+  .footer-heading {
+    font-size: x-large;
+    margin-bottom: 20px;
+  }
+  
+  .footer .bottom {
+    background-color: var(--bright-blue);
+    color: #fff;
+    background-image: url(./hilss2.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+  
+  .round {
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    padding: 18px;
+    overflow: hidden;
+    margin-right: 20px;
+    background-color: var(--dark-blue);
+  }
+  
+  .round img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .round:hover {
+    background-color: var(--yellow);
+  }
+  
+  .news-letter {
+    width: 330px;
+    margin: 10px 0;
+    background-color: #fff;
+    padding: 30px;
+    font-size: medium;
+    flex-direction: column;
+    overflow: unset;
+  }
+  
+  .news-letter input[type="email"],
+  .news-letter input[type="text"] {
+    margin: 10px 0;
+    font-size: small;
+    height: 35px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .news-letter .button-1 {
+    font-size: small;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #3f3f3f;
+    border: 1px solid #3f3f3f;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+  
+  .news-letter .button-1:hover {
+    background-color: #262626;
+  }
+  
+  .news-letter .footer-heading {
+    color: #000;
+  }
+
+  .underline-box-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-heading {
+    color: var(--bright-blue);
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 5px solid var(--yellow);
+    padding-bottom: 15px;
+  }
+  
+  .footer .top .cards{
+    width: 100vw;
+    
+  }
+
+
+  @media only screen and (max-width:790px){
+    .footer .top .card{
+      height: 200px;
+      width: 200px;
+      min-width: 200px;
+      min-height: 200px;
+    }
+  }
+
+  @media only screen and (max-width:550px){
+   .col-wrapper{
+      justify-content: flex-start;
+    }
+  }

@@ -1,0 +1,135 @@
+.main-testimonial-wrapper {
+    background-color: #257aa4;
+    padding: 50px;
+  }
+  
+  
+  
+  
+  .main-testimonial-wrapper .underline-box-heading .box-heading {
+    color: #fff;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card {
+    width: 90%;
+    height: 300px;
+    background-color: #fff;
+    margin-left: 5%;
+    padding: 20px;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card .stu-img img {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card .left {
+    padding: 30px;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card .stu-detail-holder {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card .stu-detail {
+    color: var(--bright-blue);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card .stu-detail-holder .stu-rank {
+    font-weight: 700;
+    color: var(--deep-blue);
+    font-size: x-small;
+  }
+  
+  .main-testimonial-wrapper .testimonial-card .stu-feedback {
+    font-weight: 700;
+    font-size: small;
+    line-height: 25px;
+    color: #00000090;
+  }
+
+
+  .slick-dots {
+    bottom: -50px;
+  }
+  
+  .slick-dots li button:before {
+    color: #fff;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #fff;
+  }
+
+
+  @media only screen and (max-width:1130px) {
+
+
+      
+      .main-testimonial-wrapper .testimonial-card .stu-img img{
+        height: 80px;
+        width: 80px;
+      }
+  
+      .main-testimonial-wrapper .testimonial-card .stu-detail{
+        font-size: medium;
+      }
+  
+      .main-testimonial-wrapper .testimonial-card .stu-rank{
+        font-size: small;
+      }
+  
+      .main-testimonial-wrapper .testimonial-card .left{
+        padding-left: 0;
+      }
+  }
+
+
+  @media only screen and (max-width:960px){
+  
+
+  
+
+    .main-testimonial-wrapper .testimonial-card .left{
+      padding: 30px;
+      width: 30%;
+    }
+  
+    .main-testimonial-wrapper .testimonial-card .stu-img img{
+      margin: auto;
+    }
+  
+    .main-testimonial-wrapper .testimonial-card .right{
+      width: 70%;
+    }
+
+}
+
+@media only screen and (max-width:570px){
+    .main-testimonial-wrapper .testimonial-card{
+      flex-direction: column;
+      height: 400px;
+      width: auto;
+    }
+  
+    .main-testimonial-wrapper .testimonial-card .left , .main-testimonial-wrapper .testimonial-card .right{
+      width: auto;
+    }
+  
+    .main-testimonial-wrapper .testimonial-card .left{
+      padding: 20px;
+    }
+
+}
+
+@media only screen and (max-width:470px){
+
+  
+    .main-testimonial-wrapper .testimonial-card{
+      height: 450px;
+    }
+  }
